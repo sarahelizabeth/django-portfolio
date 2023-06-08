@@ -1,9 +1,12 @@
 asgiref==3.7.2
 Django==3.2.19
+django-active-link==0.1.8
 django-appconf==1.0.5
 django-compressor==4.3.1
+django-phone-field==1.8.1
 django-sass-processor==1.2.2
 libsass==0.22.0
+Pillow==9.5.0
 pytz==2023.3
 rcssmin==1.1.1
 rjsmin==1.2.1

@@ -1,4 +1,5 @@
 {% load static %}
+{% load active_link_tags %}
 {% load sass_tags %}
 
 <!DOCTYPE html>
@@ -44,7 +45,7 @@
 					<div class="profile-section pt-3 pt-lg-0">
 						<img class="profile-image mb-3 rounded-circle mx-auto" src="{% static 'images/profile-sarah.jpg' %}" alt="image" />
 						
-						<div class="bio mb-3">Hi, my name is Sarah Murray and I'm a senior software engineer. Welcome to my personal website!</div><!--//bio-->
+						<div class="bio mb-3">{{ personal_info.nav_txt }}</div><!--//bio-->
 						<ul class="social-list list-inline py-2 mx-auto">
 							<li class="list-inline-item"><a href="#"><i class="fab fa-twitter fa-fw"></i></a></li>
 							<li class="list-inline-item"><a href="#"><i class="fab fa-linkedin-in fa-fw"></i></a></li>
@@ -57,22 +58,19 @@
 					
 					<ul class="navbar-nav flex-column text-start">
 						<li class="nav-item">
-							<a class="nav-link active" href="{% url 'index' %}"><i class="fas fa-user fa-fw me-2"></i>About Me<span class="sr-only">(current)</span></a>
+							<a class="nav-link {% active_link 'index' 'active' %}" href="{% url 'index' %}"><i class="fas fa-user fa-fw me-2"></i>About Me</a>
 						</li>
 						<li class="nav-item">
-							<a class="nav-link" href="{% url 'portfolio' %}"><i class="fas fa-laptop-code fa-fw me-2"></i>Portfolio</a>
-						</li>
-						{% comment %} <li class="nav-item">
-							<a class="nav-link" href="{% url 'services' %}"><i class="fas fa-briefcase fa-fw me-2"></i>Services &amp; Pricing</a>
-						</li> {% endcomment %}
-						<li class="nav-item">
-							<a class="nav-link" href="{% url 'resume' %}"><i class="fas fa-file-alt fa-fw me-2"></i>Resume</a>
+							<a class="nav-link {% active_link 'portfolio' 'active' %}" href="{% url 'portfolio' %}"><i class="fas fa-laptop-code fa-fw me-2"></i>Portfolio</a>
 						</li>
 						<li class="nav-item">
-							<a class="nav-link" href="{% url 'blog' %}"><i class="fas fa-blog fa-fw me-2"></i>Blog</a>
+							<a class="nav-link {% active_link 'resume' 'active' %}" href="{% url 'resume' %}"><i class="fas fa-file-alt fa-fw me-2"></i>Resume</a>
 						</li>
 						<li class="nav-item">
-							<a class="nav-link" href="{% url 'contact' %}"><i class="fas fa-envelope-open-text fa-fw me-2"></i>Contact</a>
+							<a class="nav-link {% active_link 'blog' 'active' %}" href="{% url 'blog' %}"><i class="fas fa-blog fa-fw me-2"></i>Blog</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link {% active_link 'contact' 'active' %}" href="{% url 'contact' %}"><i class="fas fa-envelope-open-text fa-fw me-2"></i>Contact</a>
 						</li>
 						<li class="nav-item dropdown">
 							<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
